@@ -1,3 +1,8 @@
+// parse V Files
+const parseV = (file) => ({
+  body: file,
+})
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -39,7 +44,11 @@ export default {
   ],
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: {},
+  content: {
+    extendParser: {
+      '.v': parseV,
+    },
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

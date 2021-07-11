@@ -1,17 +1,26 @@
 <template>
   <div id="grid-container">
     <TheHeader id="header"></TheHeader>
-    <TheLesson :lesson="lesson"></TheLesson>
-    <TheCode></TheCode>
+    <TheLesson :lesson="lesson" :prev="prev" :next="next"></TheLesson>
+    <TheCode :code="code"></TheCode>
   </div>
 </template>
 
 <script>
 export default {
   async asyncData({ $content, params }) {
-    const lesson = await $content(params.chapter, params.lesson).fetch()
+    const lesson = await $content(params.module, params.lesson).fetch()
+    const code = await $content(params.module, 'code', params.lesson)
+      .fetch()
+      .catch(() => ({ body: '' })) // avoid undefined errors
 
-    return { lesson }
+    const [prev, next] = await $content(params.module)
+      .only(['title', 'slug', 'path'])
+      .sortBy('path', 'asc')
+      .surround(params.lesson)
+      .fetch()
+
+    return { lesson, code, next, prev }
   },
 }
 </script>
