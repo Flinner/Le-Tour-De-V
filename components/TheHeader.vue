@@ -1,3 +1,27 @@
 <template>
-  <header style="background-color: red"></header>
+  <v-app-bar flat dense class="app-bar">
+    <v-toolbar-title>Le Tour De </v-toolbar-title>
+    <img class="logo" src="/v-logo.png" />
+    <v-spacer></v-spacer>
+
+    <!-- TODO: Links -->
+    <v-icon class="icon">mdi-github</v-icon>
+    <v-icon class="icon">mdi-discord</v-icon>
+    <v-icon class="icon">mdi-mastodon</v-icon>
+    <v-icon class="icon">mdi-youtube</v-icon>
+  </v-app-bar>
 </template>
+
+<style scoped>
+.logo {
+  height: 20px;
+  position: relative;
+  top: -4px;
+}
+.app-bar {
+  padding: 0 20px 0 40px;
+}
+.icon {
+  margin: 0 9px;
+}
+</style>

@@ -44,9 +44,9 @@ body {
     'header header'
     'lesson code';
   grid-template-columns: 50% 50%;
-  grid-template-rows: 64px auto;
+  grid-template-rows: 48px auto;
   height: 100%;
-  width: 100%;
+  width: 100vw;
 }
 
 #header {

@@ -1,5 +1,5 @@
 <template>
-  <div style="background-color: green">
+  <div>
     <!-- <nuxt-content :document="code" /> -->
     <div v-if="code.body">
       <pre>{{ code.body }}</pre>
