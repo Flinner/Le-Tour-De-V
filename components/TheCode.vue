@@ -1,8 +1,12 @@
 <template>
   <div>
     <!-- <nuxt-content :document="code" /> -->
-    <pre v-if="code.body" class="language-v">{{ code.body }}</pre>
-    <pre v-if="!code.body" class="language-v">no code !</pre>
+    <div v-if="code.body">
+      <pre>{{ code.body }}</pre>
+    </div>
+    <template v-if="!code.body">
+      <div>no code !</div>
+    </template>
   </div>
 </template>
 
@@ -16,10 +20,3 @@ export default {
   },
 }
 </script>
-
-<style>
-pre {
-  height: 100%;
-  margin: 20px;
-}
-</style>

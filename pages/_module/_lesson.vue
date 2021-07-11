@@ -43,7 +43,7 @@ body {
   grid-template-areas:
     'header header'
     'lesson code';
-  grid-template-columns: 45% 55%;
+  grid-template-columns: 50% 50%;
   grid-template-rows: 48px auto;
   height: 100%;
   width: 100vw;
