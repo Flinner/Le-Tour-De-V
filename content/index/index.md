@@ -17,14 +17,14 @@ Declaring variables, calling functions, and all the things you need to
 know before moving to the next lessons.
 
 
-1. <a href="#"> Packages, variables, and functions.</a>
+1. <a href="/basics/1"> Packages, variables, and functions.</a>
 Learn the basic components of any V program.
 
-2. <a href="#"> Flow control statements: for, if, else, switch and defer</a>
+2. <a href="/basics/2"> Flow control statements: for, if, else, switch and defer</a>
 Learn how to control the flow of your code with conditionals, loops,
 switches and defers.
 
-3. <a href="#"> More types: structs, slices, and maps.</a>
+3. <a href="/basics/3"> More types: structs, slices, and maps.</a>
 Learn how to define types based on existing ones: this lesson covers
 structs, arrays, slices, and maps.
 
