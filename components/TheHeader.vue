@@ -5,10 +5,18 @@
     <v-spacer></v-spacer>
 
     <!-- TODO: Links -->
-    <v-icon class="icon">mdi-github</v-icon>
-    <v-icon class="icon">mdi-discord</v-icon>
-    <v-icon class="icon">mdi-mastodon</v-icon>
-    <v-icon class="icon">mdi-youtube</v-icon>
+    <v-btn href="https://github.com/flinner/le-tour-de-v" icon>
+      <v-icon class="icon">mdi-github</v-icon>
+    </v-btn>
+    <v-btn href="https://example.com" icon>
+      <v-icon class="icon">mdi-discord</v-icon>
+    </v-btn>
+    <v-btn href="https://example.com" icon>
+      <v-icon class="icon">mdi-mastodon</v-icon>
+    </v-btn>
+    <v-btn href="https://example.com" icon>
+      <v-icon class="icon">mdi-youtube</v-icon>
+    </v-btn>
   </v-app-bar>
 </template>
 

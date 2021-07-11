@@ -5,13 +5,17 @@
       :to="prev.slug"
       class="font-bold text-primary hover:underline"
     >
-      Prev
+      <v-icon x-large class="icon">mdi-menu-left</v-icon>
     </NuxtLink>
-    <span v-else>&nbsp;</span>
+    <!-- Keep balance if an arrow isn't showing -->
+    <span v-else>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
     <NuxtLink v-if="next" :to="next.slug" class="font-bold hover:underline">
-      Next
+      <v-icon x-large class="icon">mdi-menu-right</v-icon>
     </NuxtLink>
-    <span v-else>&nbsp;</span>
+
+    <!-- Keep balance if an arrow isn't showing -->
+    <span v-else>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   </div>
 </template>
 

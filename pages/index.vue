@@ -1,6 +1,6 @@
 <template>
   <div>
-  HI
+    <a href="/welcome/1">hehe</a>
   </div>
 </template>
 
