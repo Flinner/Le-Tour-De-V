@@ -2,7 +2,7 @@
   <div>
     <!-- <nuxt-content :document="code" /> -->
     <pre v-if="code.body" class="language-v">{{ code.body }}</pre>
-    <pre v-if="!code.body" class="language-v">no code !</pre>
+    <pre v-if="!code.body" class="language-v"></pre>
   </div>
 </template>
 
