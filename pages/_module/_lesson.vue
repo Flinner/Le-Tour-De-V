@@ -14,17 +14,28 @@ export default {
       .fetch()
       .catch(() => ({ body: '' })) // avoid undefined errors
 
-    const [prev, next] = await $content(params.module)
+    let [prev, next] = await $content(params.module)
       .only(['title', 'slug', 'path'])
       .sortBy('path', 'asc')
       .surround(params.lesson)
       .fetch()
+
+    // hacky way to get next/prev from the markdown's preample
+    if (!prev) {
+      prev = lesson.prev ? { path: lesson.prev } : undefined
+    }
+    if (!next) {
+      next = lesson.next ? { path: lesson.next } : undefined
+    }
 
     return { lesson, code, next, prev }
   },
 }
 </script>
 <style>
+* {
+  box-sizing: border-box;
+}
 /* Hack to have 100% height */
 div#__nuxt,
 #__layout,

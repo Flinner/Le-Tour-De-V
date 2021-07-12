@@ -2,7 +2,7 @@
   <div class="flex justify-between">
     <NuxtLink
       v-if="prev"
-      :to="prev.slug"
+      :to="prev.path"
       class="font-bold text-primary hover:underline"
     >
       <v-icon x-large class="icon">mdi-menu-left</v-icon>
@@ -10,7 +10,7 @@
     <!-- Keep balance if an arrow isn't showing -->
     <span v-else>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
-    <NuxtLink v-if="next" :to="next.slug" class="font-bold hover:underline">
+    <NuxtLink v-if="next" :to="next.path" class="font-bold hover:underline">
       <v-icon x-large class="icon">mdi-menu-right</v-icon>
     </NuxtLink>
 
