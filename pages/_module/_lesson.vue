@@ -34,18 +34,19 @@ export default {
 </script>
 <style>
 * {
+  margin: 0;
   box-sizing: border-box;
 }
+html {
+  /* overflow-y: hidden; */
+}
 /* Hack to have 100% height */
-div#__nuxt,
-#__layout,
-#__layout > div,
-#app {
-  min-height: 100vh;
-}
-body {
-  margin: 0;
-}
+/* div#__nuxt, */
+/* #__layout, */
+/* #__layout > div, */
+/* #app { */
+/*   min-height: 100vh; */
+/* } */
 </style>
 
 <style scoped>
@@ -56,8 +57,18 @@ body {
     'lesson code';
   grid-template-columns: 45% 55%;
   grid-template-rows: 48px auto;
-  height: 100%;
+  height: 100vh;
   width: 100vw;
+}
+@media (max-width: 800px) {
+  body #grid-container {
+    grid-template-areas:
+      'header'
+      'lesson'
+      'code';
+    grid-template-columns: 100%;
+    grid-template-rows: 48px 50% 50%;
+  }
 }
 
 #header {

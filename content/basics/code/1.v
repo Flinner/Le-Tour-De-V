@@ -1,14 +1,9 @@
 module main
 
 fn main() {
-	println(add(77, 33))
-	println(sub(100, 50))
+	println('hello world!')
 }
 
-fn add(x int, y int) int {
-	return x + y
-}
+// a "hello world" program in V is as simple as
 
-fn sub(x int, y int) int {
-	return x - y
-}
+println('hello world')

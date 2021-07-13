@@ -1,8 +1,7 @@
-fn foo() (int, int) {
-	return 2, 3
-}
+// This is a single line comment.
+/*
+This is a multiline comment.
+   /* It can be nested. */
+*/
 
-a, b := foo()
-println(a) // 2
-println(b) // 3
-c, _ := foo() // ignore values using `_`
+// println('no code is running D:')

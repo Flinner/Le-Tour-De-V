@@ -1,6 +1,16 @@
-// this will not compile, because the variable age is not
-// declared. All variables need to be declared in V.
+module strings
 
-fn main() {
-	age = 21
-}
+name := 'Bob'
+println(name.len)
+
+// indexing gives a byte B
+println(name[0])
+
+// slicing gives a string 'ob'
+println(name[1..3])
+
+// escape special characters like in C
+windows_newline := '\r\n'
+
+// testing syntax, stay tuned!
+assert windows_newline.len == 2
