@@ -23,9 +23,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-    css: [
-    'vuetify/dist/vuetify.css',
-    ],
+  css: ['vuetify/dist/vuetify.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -36,7 +34,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/typescript
-  //  '@nuxt/typescript-build',
+    //  '@nuxt/typescript-build',
     '@nuxtjs/vuetify',
   ],
 
@@ -57,4 +55,10 @@ export default {
   build: {},
 
   telemetry: false,
+  // sorting by slug
+  hooks: {
+    'content:file:beforeInsert': (document) => {
+      document.slugInt = parseInt(document.slug)
+    },
+  },
 }

@@ -16,7 +16,9 @@ export default {
 
     let [prev, next] = await $content(params.module)
       .only(['title', 'slug', 'path'])
-      .sortBy('path', 'asc')
+      // hook for slugInt to convert slug from string -> int
+      // hook in nuxt.config.js
+      .sortBy('slugInt', 'asc')
       .surround(params.lesson)
       .fetch()
 
@@ -27,6 +29,7 @@ export default {
     if (!next) {
       next = lesson.next ? { path: lesson.next } : undefined
     }
+    // convert from string to integer
 
     return { lesson, code, next, prev }
   },
