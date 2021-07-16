@@ -1,7 +1,13 @@
 <template>
   <div id="grid-container">
     <TheHeader id="header"></TheHeader>
-    <TheLesson :lesson="lesson" :prev="prev" :next="next"></TheLesson>
+    <TheLesson
+      :lesson="lesson"
+      :total="total"
+      :current="current"
+      :prev="prev"
+      :next="next"
+    ></TheLesson>
     <TheCode :code="code"></TheCode>
   </div>
 </template>
@@ -29,9 +35,18 @@ export default {
     if (!next) {
       next = lesson.next ? { path: lesson.next } : undefined
     }
-    // convert from string to integer
 
-    return { lesson, code, next, prev }
+    // for number of lessons in module
+    // used in the next/prev button "<2/6>"
+    let total = await $content(params.module)
+      .only(['title', 'slug', 'path'])
+      .sortBy('slugInt', 'asc')
+      .fetch()
+    total = total.length
+
+    const current = lesson.slugInt
+
+    return { lesson, code, next, prev, total, current }
   },
 }
 </script>

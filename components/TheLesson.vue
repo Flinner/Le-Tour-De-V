@@ -1,6 +1,12 @@
 <template>
   <div class="lesson">
-    <prev-next class="prev-next" :prev="prev" :next="next" />
+    <prev-next
+      class="prev-next"
+      :current="current"
+      :total="total"
+      :prev="prev"
+      :next="next"
+    />
     <nuxt-content :document="lesson" />
 
     <!-- Next/Prev Linkx -->
@@ -20,6 +26,12 @@ export default {
     prev: {
       type: Object,
     },
+    total: {
+      type: Number,
+    },
+    current: {
+      type: Number,
+    },
   },
 }
 </script>
@@ -35,6 +47,7 @@ export default {
   position: fixed;
   bottom: 0px;
   left: 40%;
+  z-index: 2;
 }
 
 .nuxt-content p {

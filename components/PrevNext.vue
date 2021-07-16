@@ -9,7 +9,7 @@
     </NuxtLink>
     <!-- Keep balance if an arrow isn't showing -->
     <span v-else>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-
+    {{ current }} / {{ total }}
     <NuxtLink v-if="next" :to="next.path" class="font-bold hover:underline">
       <v-icon x-large class="icon">mdi-menu-right</v-icon>
     </NuxtLink>
@@ -24,6 +24,14 @@ export default {
   props: {
     prev: {
       type: Object,
+      default: () => null,
+    },
+    total: {
+      type: Number,
+      default: () => null,
+    },
+    current: {
+      type: Number,
       default: () => null,
     },
     next: {
